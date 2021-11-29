@@ -1,14 +1,14 @@
-const express = require("express")
+const path = require("path");
+const express = require("express");
 const app = express();
 
 const port = 3000;
 
+app.use(express.static(path.join(__dirname, "public")));
+
 app.get("/", (req, res) => {
     //res.send("Hello, World!");
-    res.sendFile(__dirname + "/public/home.html");
-});
-app.get("/test", (req, res) => {
-    res.sendFile(__dirname + "/public/test.html");
+    res.sendFile(path.join(__dirname, "public", "home.html"));
 });
 
 app.listen(port, ()=> {
