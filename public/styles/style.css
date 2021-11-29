@@ -108,7 +108,31 @@ body {
     text-indent: 0.5in;
     line-height: 24px;
 }
-.container-body img {
+/*
+NOTE: ALL #content should have their own background-image style with their own respective image URL
+so don't add any background-image style here, add it directly in the HTML file
+*/
+.container-body #content {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 25% 75%;
+}
+.container-body #content:hover {
+    cursor: pointer;
+}
+.container-body #content #credit {
+    color: white;
+    text-align: center;
+    margin-top: auto;
+    margin-right: 10px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0 5px 0 5px;
 }
